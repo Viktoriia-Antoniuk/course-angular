@@ -1,0 +1,35 @@
+*{
+    margin: 0 auto;
+}
+.title {
+    padding-top: 50px;
+    text-align: center;
+    height: 100px; 
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+    font-weight: bold;
+    font-size: 46px;
+}
+
+.task {
+    background-color: cornflowerblue;
+    height: 100vh;
+    
+    .item{
+        padding: 50px 50px;
+        display: inline-block;
+        border: solid 5px;
+        margin-left: 110px;
+        margin-top: 50px;
+        h3{
+            font-size: 40px;
+        }
+        p{
+            font-size: 30px;
+        }
+    }
+
+    .item:hover{
+        border: solid 5px red;
+    }
+}
