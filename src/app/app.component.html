@@ -1,0 +1,23 @@
+<h2>
+  Welcome {{name}}
+</h2>
+<p>
+  {{number + 10}}
+</p>
+<ul>
+  <li *ngFor="let number of arrNumber">{{number}}</li>
+</ul>
+
+<div *ngFor="let product of products">
+  <h3>{{product.name}}</h3>
+  <p>Price: {{product.price}}</p>
+  <p>Stock: {{product.isStock}}</p>
+</div>
+
+<button (click)="openDropdown()">Menu</button>
+<ul *ngIf="isOpenMenu" [ngClass]="isOpenMenu ? 'open' : ''">
+  <li>html</li>
+  <li>css</li>
+  <li>js</li>
+  <li>angular</li>
+</ul>
