@@ -1,0 +1,10 @@
+<body>
+    <header class="title">My First ToDoList</header>
+
+    <div class="task">
+        <div *ngFor="let task of tasks" class="item" [ngClass]="{'done': task.status}">
+            <h3>{{task.name}}</h3>
+            <p>Done: {{task.status}}</p>
+        </div>
+    </div>
+</body>
