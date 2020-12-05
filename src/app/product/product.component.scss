@@ -1,0 +1,14 @@
+:host(.grid){
+
+}
+
+:host(.list){
+    .thumbnail{
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .caption{
+        margin-left: 10px;
+    }
+    
+}
