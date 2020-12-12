@@ -1,0 +1,25 @@
+<h2>Product list</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product</th>
+      <th scope="col" (click)="sortProd()">Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of products | sort : sortType">
+    <tr>
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+
+    </tr>
+  </tbody>
+  <tfoot>
+    <td>Total</td>
+    <td></td>
+    <td>$200</td>
+    <td></td>
+  </tfoot>
+</table>
