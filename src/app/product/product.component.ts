@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from '../product.model';
 
 @Component({
   selector: 'app-product',
@@ -7,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
   @Input() product;
+  @Output() addCartUp = new EventEmitter<Product>();
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.product);
+  }
+  // tslint:disable-next-line: typedef
+  addToCart() {
+    this.addCartUp.emit(this.product);
   }
 
 }

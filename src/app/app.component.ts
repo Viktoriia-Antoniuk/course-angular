@@ -7,7 +7,12 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  view: string = 'grid';
+
+  view = 'grid';
+
+  newProduct: Product;
+
+  productsCart: Product[] = [];
   products: Product[] = [{
     name: 'Product title 1',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eligendi possimus fugit laudantium cupiditate quidem aut nisi et, obcaecati, iste quis ducimus ad minus laborum optio? Aperiam nobis voluptatum totam.',
@@ -17,7 +22,14 @@ export class AppComponent {
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eligendi possimus fugit laudantium cupiditate quidem aut nisi et, obcaecati, iste quis ducimus ad minus laborum optio? Aperiam nobis voluptatum totam.',
     price: 21
   }];
+  // tslint:disable-next-line: typedef
   changeView(view: string) {
     this.view = view;
+  }
+  // tslint:disable-next-line: typedef
+  pushToCartComponent(product: Product) {
+    product = Object.assign({}, product);
+    this.newProduct = product;
+    this.productsCart.push(product);
   }
 }

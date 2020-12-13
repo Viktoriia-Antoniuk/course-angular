@@ -1,7 +1,3 @@
-:host(.grid){
-
-}
-
 :host(.list){
     .thumbnail{
         display: flex;
@@ -12,3 +8,6 @@
     }
     
 }
+:host-context(.grid) {
+    width: 50%;
+  }

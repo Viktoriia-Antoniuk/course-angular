@@ -1,0 +1,7 @@
+<div *ngFor="let product of productsCart; let i = index">
+    {{ product.name }}  ${{ product.price }}
+    <button type="button" class="close" (click)="deleteProductCart(i)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {{ total }}
