@@ -1,4 +1,12 @@
 <div id="app" class="container list-grid-demo">
+    <p>Total: {{total}}</p>
+    <div *ngFor="let product of carts; let i = index;" class="item-cart">
+        <p>{{product.name}}</p>
+        <div>
+            <p>{{product.price | currency}} </p>
+            <button (click)="delete(i)">Delete</button>
+        </div>
+    </div>
     <div class="well well-sm">
         <strong>Display</strong>
         <div class="btn-group">
@@ -11,7 +19,7 @@
 
     <div id="products" :class="groupWrapper" class="row">
         <div class="item" [ngClass]="view === 'list' ? 'col-12' : 'col-xs-4 col-lg-4'" *ngFor="let product of products">
-            <app-product [product]="product" [ngClass]="view"></app-product>
+            <app-product [product]="product" [ngClass]="view" (onAddToCart)="addToCart($event)"></app-product>
         </div>
     </div>
 </div>
