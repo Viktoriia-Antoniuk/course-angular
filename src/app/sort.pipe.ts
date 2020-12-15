@@ -10,9 +10,9 @@ export class SortPipe implements PipeTransform {
     console.log(value, args);
     function sortArray(a: Product, b: Product): number {
       if (args === 'desc') {
-        return b.price - a.price;
+        return +b.price - +a.price;
       } else {
-        return a.price - b.price;
+        return +a.price - +b.price;
       }
     }
     return value.sort(sortArray);
