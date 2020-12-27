@@ -1,0 +1,83 @@
+<section>
+    <div class="container">
+        <form #loginForm="ngForm"  *ngIf="formType == 'login'" (ngSubmit)="onLog()">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required="required" [(ngModel)]="login.email" #email="ngModel">
+                </div>
+                <div *ngIf="email.errors && (email.dirty || email.touched)" >
+                    <div class="invalid-feedback" *ngIf="email.errors.required">Email is required</div>
+                    <div class="invalid-feedback" *ngIf="email.errors.email">Email not corect</div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <div class="input-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="required"
+                        [(ngModel)]="login.password" #password="ngModel">
+                </div>
+                <div *ngIf="password.errors && (password.dirty || password.touched)">
+                    <div class="invalid-feedback" *ngIf="password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <input type="submit" value="Login" class="btn btn-primary" [disabled]="!loginForm.form.valid">
+        </form>
+
+        <form [formGroup]="formReg" *ngIf="formType == 'registration'" (ngSubmit)="onReg()"> 
+            <div class="form-group">
+                <label class="d-block">
+                    <input type="text" class="form-control" placeholder="Username" formControlName="name" [ngClass]="{'is-invalid': formReg.controls.name.errors && formReg.controls.name.dirty}">
+                    <div class="invalid-feedback" *ngIf="formReg.get('name').errors?.required">
+                        Username is required
+                    </div>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="d-block">
+                    <input type="text" class="form-control" placeholder="Full name" formControlName="fullname" [ngClass]="{'is-invalid': formReg.controls.fullname.errors && formReg.controls.fullname.dirty}">
+                    <div class="invalid-feedback" *ngIf="formReg.get('fullname').errors?.required">
+                        Full name is required
+                    </div>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="d-block">
+                    <input type="text" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{'is-invalid': formReg.controls.email.errors && formReg.controls.email.dirty}">
+                    <div class="invalid-feedback" *ngIf="formReg.get('email').errors?.required">
+                        Email is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="formReg.get('email').errors?.email">
+                        Invalid format email
+                    </div>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="d-block">
+                    <input type="password" name="password" placeholder="Password" class="form-control" autocomplete="on" formControlName="password" [ngClass]="{'is-invalid': formReg.controls.password.errors && formReg.controls.password.dirty}">
+                    <div class="invalid-feedback" *ngIf="formReg.get('password').errors?.required">
+                        Password is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="formReg.get('password').errors?.pattern">
+                        Field doesn't meet requirements
+                    </div>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="d-block">
+                    <input type="password" name="cpassword" placeholder="Confirm  Password" class="form-control" autocomplete="on" formControlName="confirm" [ngClass]="{'is-invalid': formReg.controls.confirm.errors && formReg.controls.confirm.dirty}">
+                    <div class="invalid-feedback" *ngIf="formReg.get('confirm').errors?.required">
+                        Passwords is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="formReg.get('confirm').errors?.mismatch">Passwords must match</div>
+                </label>
+                <div class="invalid-feedback" *ngIf="formReg.get('confirm').errors?.notSame">Passwords must match</div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" [disabled]="!formReg.valid">
+            </div>
+        </form>
+    </div>
+</section>
