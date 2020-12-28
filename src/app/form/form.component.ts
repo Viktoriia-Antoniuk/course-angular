@@ -32,11 +32,11 @@ export class FormComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$')]],
       confirm: ['', [Validators.required]]
-    }, this.pwdMatchValidator);
+    }, {validator: this.pwdMatchValidator});
   }
   pwdMatchValidator(group: FormGroup) {
-    let pass = this.formReg.controls.password.value;
-    let confirmPass = this.formReg.controls.confirnm.value;
+    let pass = group.controls['password'].value;
+    let confirmPass = group.controls['confirm'].value;
 
     return pass === confirmPass ? null : { notSame: true };
  }
