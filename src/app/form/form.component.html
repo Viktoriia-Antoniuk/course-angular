@@ -67,13 +67,13 @@
             </div>
             <div class="form-group">
                 <label class="d-block">
-                    <input type="password" name="cpassword" placeholder="Confirm  Password" class="form-control" autocomplete="on" formControlName="confirm" [ngClass]="{'is-invalid': formReg.controls.confirm.errors && formReg.controls.confirm.dirty}">
+                    <input type="password" name="cpassword" placeholder="Confirm  Password" class="form-control" autocomplete="on" formControlName="confirm" [ngClass]="{'is-invalid': formReg.controls.confirm.errors && formReg.controls.confirm.dirty || formReg.errors?.notSame && formReg.controls.confirm.dirty}">
                     <div class="invalid-feedback" *ngIf="formReg.get('confirm').errors?.required">
                         Passwords is required
                     </div>
                     <div class="invalid-feedback" *ngIf="formReg.get('confirm').errors?.mismatch">Passwords must match</div>
+                    <div class="invalid-feedback" *ngIf="formReg.errors?.notSame">Passwords must match</div>
                 </label>
-                <div class="invalid-feedback" *ngIf="formReg.errors?.notSame">Passwords must match</div>
             </div>
             <div class="form-group">
                 <input type="submit" value="Register" class="btn btn-primary" [disabled]="!formReg.valid">

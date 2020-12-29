@@ -30,7 +30,8 @@ export class FormComponent implements OnInit {
       name: ['', [Validators.required]],
       fullname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$')]],
+      // tslint:disable-next-line: max-line-length
+      password: ['', [Validators.required, Validators.pattern('^(?=.s*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$')]],
       confirm: ['', [Validators.required]]
     }, {validator: this.pwdMatchValidator});
   }
