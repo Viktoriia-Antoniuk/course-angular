@@ -1,0 +1,10 @@
+<button class="btn btn-secondary" *ngIf="cart.length > 0" (click)="deleteCart()">Clear cart</button>
+<div *ngFor="let product of cart; let i = index;">
+    <div class="d-flex justify-content-between">
+        {{product.name}}
+        <button class="btn btn-danger" (click)="deleteCartProduct(i)">Delete</button>
+    </div>
+    <p>
+        {{product.quantity}}
+    </p>
+</div>

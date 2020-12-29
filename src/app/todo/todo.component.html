@@ -1,0 +1,17 @@
+<form [formGroup]='todoForm' (ngSubmit)="addTodo()" class="input-group mb-3 d-flex justify-content-center">
+    <input type="text" formControlName="name" class="border border-warning">
+    <input type="submit" value="Add" class="btn btn-warning">
+</form>
+<div class="card" *ngFor="let task of todo; let i = index;" [ngClass]="{'bg-success': task.complete, 'bg-danger': !task.complete}">
+    <div class="card-body">
+        <div class="d-flex justify-content-between mx-5">
+            <label>
+                <h5 class="card-title center">{{task.name}}</h5>
+                <input type="checkbox" (change)="updateItemTodo($event)" name="complete" [(ngModel)]="task.complete">
+            </label>
+            <div>
+                <button class="btn btn-warning" (click)="deleteTodo(i)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
