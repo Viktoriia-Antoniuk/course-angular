@@ -1,0 +1,11 @@
+<form [formGroup]="addPostForm" (ngSubmit)="sendPost()">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title" formControlName='title'>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Text</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName='body'></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Post</button>
+  </form>
