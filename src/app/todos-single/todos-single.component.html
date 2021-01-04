@@ -1,0 +1,6 @@
+<div>
+    <h2>{{todo.title}}</h2>
+    <p class="d-inline" [ngClass]="{'bg-success': todo.completed, 'bg-danger': !todo.completed}">Completed: {{todo.completed}}</p>
+    <button class="btn btn-primary d-block mt-3" (click)="backTo()">Back</button>
+</div>
+

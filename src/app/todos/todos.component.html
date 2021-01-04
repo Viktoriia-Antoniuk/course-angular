@@ -1,0 +1,4 @@
+<div *ngFor="let todo of todos" class="border p-3 mb-3">
+    <h2>{{todo.title}}</h2>
+    <a [routerLink]="['/todos', todo.id]">Read more</a>
+</div>
