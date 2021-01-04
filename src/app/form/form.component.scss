@@ -1,0 +1,12 @@
+form {
+    margin: 0 auto;
+    padding: 15px;
+    background-color: gray;
+    .form-element {
+        margin-bottom: 20px;
+        .size {
+            margin-right: 10px;
+        }
+    }
+}
+
