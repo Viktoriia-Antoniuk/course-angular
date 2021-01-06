@@ -1,7 +1,7 @@
-<div class="size">
-    <button type="button" class="btn newsize" [ngClass]="{'btn-primary': formType == 'login'}"
+<div class="container">
+    <button type="button" class="btn" [ngClass]="{'btn-primary': formType == 'login'}"
         (click)="changeForm('login')">Login</button>
-    <button type="button" class="btn newsize" [ngClass]="{'btn-primary': formType == 'registration'}"
+    <button type="button" class="btn" [ngClass]="{'btn-primary': formType == 'registration'}"
         (click)="changeForm('registration')">Registration</button>
 </div>
 <app-form [formType]="formType"></app-form>
