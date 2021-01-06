@@ -9,17 +9,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   searchForm: FormGroup;
-  
+
   constructor(
     private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.searchForm = this.fb.group({
-      search: ['', Validators.required]
+      search: ['', [Validators.required]],
+      radio: ['', [Validators.required]],
+      comment: ['', [Validators.required]]
     });
   }
 
+  // tslint:disable-next-line: typedef
   searchByKeyword() {
     console.log(this.searchForm.value);
   }
