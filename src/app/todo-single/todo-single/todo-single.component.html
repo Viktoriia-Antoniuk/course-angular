@@ -1,8 +1,11 @@
-<div class="todo-item" [ngClass]="todo.completed ? 'todo-completed' : 'todo-not-completed'">
-    <h3>{{todo.name}}</h3>
+<div class="todo-single" [ngClass]="todo.completed ? 'todo-completed' : 'todo-not-completed'">
+    <h1>{{todo.name}}</h1>
     <p>{{todo.description}}</p>
+    <p>Deadline: {{todo.createdAt | date}}</p>
+    <p>Priority: {{todo.priority}}</p>
+    <button mat-icon-button (click)="backTo()">
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
 </div>
-<button mat-icon-button (click)="backTo()">
-    <mat-icon>keyboard_backspace</mat-icon>
-</button>
+
 
