@@ -5,7 +5,7 @@
         <mat-icon>settings</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item [routerLink]="['/todo', todo.id]">
             <mat-icon>visibility</mat-icon>View
         </button>
         <button mat-menu-item>

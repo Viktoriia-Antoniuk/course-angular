@@ -1,1 +1,8 @@
-<p>todo-single works!</p>
+<div class="todo-item" [ngClass]="todo.completed ? 'todo-completed' : 'todo-not-completed'">
+    <h3>{{todo.name}}</h3>
+    <p>{{todo.description}}</p>
+</div>
+<button mat-icon-button (click)="backTo()">
+    <mat-icon>keyboard_backspace</mat-icon>
+</button>
+
