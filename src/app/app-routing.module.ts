@@ -2,11 +2,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [{
-    path: 'todo', loadChildren: () => import('./todo-list/todo-list.module').then(m => m.TodoListModule)
+    path: 'todos', loadChildren: () => import('./todo-list/todo-list.module').then(m => m.TodoListModule)
 }, {
-    path: 'todo/:id', loadChildren: () => import('./todo-single/todo-single.module').then(m => m.TodoSingleModule)
+    path: 'todos/add', loadChildren: () => import('./todo-add/todo-add.module').then(m => m.TodoAddModule)
 }, {
-    path: '', redirectTo: 'todo', pathMatch: 'full'
+    path: 'todos/:id', loadChildren: () => import('./todo-single/todo-single.module').then(m => m.TodoSingleModule)
+}, {
+    path: '', redirectTo: 'todos', pathMatch: 'full'
 }];
 
 @NgModule({

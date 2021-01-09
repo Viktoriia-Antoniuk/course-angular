@@ -5,6 +5,7 @@ import { TodoSingleRoutingModule } from './todo-single-routing.module';
 import { TodoSingleComponent } from './todo-single/todo-single.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -16,7 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     TodoSingleRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule
   ]
 })
 export class TodoSingleModule { }

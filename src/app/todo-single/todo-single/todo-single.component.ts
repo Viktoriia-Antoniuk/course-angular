@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Todo } from 'src/app/shared/models/todo.model';
+import { Priority, Todo } from 'src/app/shared/models/todo.model';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class TodoSingleComponent implements OnInit {
   todo: Todo;
+  readonly Priority = Priority;
   
   constructor(
     private router: Router,
@@ -26,6 +27,6 @@ export class TodoSingleComponent implements OnInit {
   }
 
   backTo() {
-    this.router.navigate(['todo']);
+    this.router.navigate(['todos']);
   }
 }
