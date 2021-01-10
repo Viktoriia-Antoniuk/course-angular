@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Todo } from 'src/app/shared/models/todo.model';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
@@ -9,27 +9,23 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class TodoAddComponent implements OnInit {
 
-  minDate = new Date();
-  newTodo: FormGroup;
+  message = '';
 
   constructor(
-    private fb: FormBuilder,
     private dataService: DataService
   ) { }
 
   ngOnInit(): void {
-    this.newTodo = this.fb.group({
-      name: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      createdAt: ['', [Validators.required]],
-      priority: ['', [Validators.required]],
-      completed: [false]
-    });
   }
-  addTodo() {
-    console.log(this.newTodo.value);
-    this.dataService.addNewTodo(this.newTodo.value).subscribe((res) => {
+
+  addTodo(todo: Todo) {
+    console.log(todo);
+    this.dataService.addNewTodo(todo).subscribe((res) => {
       console.log(res);
+      this.message = 'Task is added!';
+      setTimeout(() => {
+        this.message = '';
+      }, 3000);
     });
   }
 }

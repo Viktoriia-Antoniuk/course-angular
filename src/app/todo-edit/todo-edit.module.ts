@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TodoAddRoutingModule } from './todo-add-routing.module';
-import { TodoAddComponent } from './todo-add/todo-add.component';
+import { TodoEditRoutingModule } from './todo-edit-routing.module';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
 import { TodoFormModule } from '../shared/todo-form/todo-form.module';
 
 
-
-
-
-
-
 @NgModule({
-  declarations: [TodoAddComponent],
+  declarations: [TodoEditComponent],
   imports: [
     CommonModule,
-    TodoAddRoutingModule,
+    TodoEditRoutingModule,
     TodoFormModule
   ]
 })
-export class TodoAddModule { }
+export class TodoEditModule { }

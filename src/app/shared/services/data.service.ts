@@ -23,7 +23,11 @@ export class DataService {
     return this.http.get<Todo>(this.urlApi + id);
   }
 
-  addNewTodo(todo: Todo): Observable<any> {
-    return this.http.post(this.urlApi, todo);
+  addNewTodo(todo: Todo): Observable<Todo> {
+    return this.http.post<Todo>(this.urlApi, todo);
+  }
+
+  editTodo(todo: Todo, id: number): Observable<Todo> {
+    return this.http.put<Todo>(this.urlApi + id, todo);
   }
 }
