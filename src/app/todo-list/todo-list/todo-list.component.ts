@@ -22,4 +22,8 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  deleteTodo(i: number) {
+    console.log(i);
+    this.todos.splice(i, 1);
+  }
 }

@@ -30,4 +30,8 @@ export class DataService {
   editTodo(todo: Todo, id: number): Observable<Todo> {
     return this.http.put<Todo>(this.urlApi + id, todo);
   }
+
+  deleteTodo(id: number): Observable<Todo> {
+    return this.http.delete<Todo>(this.urlApi + id);
+  }
 }
