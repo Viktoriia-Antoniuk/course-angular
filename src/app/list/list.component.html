@@ -1,0 +1,27 @@
+<div class="col ">
+  <input type="button" class="btn btn-secondary mx-5" value="Розрахувати" (click)="calcList()">
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between mx-5">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Об'єкти</th>
+                    <th scope="col">Комплексний показник</th>
+                    <th scope="col">Рівень критичності</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let task of list; let i=index;" [ngClass]="{'bg-info': task.level == 1, 'bg-yellow': task.level == 2, 'bg-warning': task.level == 3, 'bg-danger': task.level == 4}">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{task.name}}</td>
+                    <td>{{task.y}}</td>
+                    <td>{{task.level}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

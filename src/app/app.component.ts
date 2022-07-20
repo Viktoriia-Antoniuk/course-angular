@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  // tslint:disable-next-line: typedef
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   
 }

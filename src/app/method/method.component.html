@@ -1,0 +1,114 @@
+<h4 class="mx-5">Дані об'єкта</h4>
+<div class="form-row form-group mx-5">
+    <div class="col-3">
+        <input type="text" class="form-control" placeholder="Назва об'єкта" #name>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П1" #p1>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П2" #p2>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П3" #p3>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П4" #p4>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П5" #p5>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П6" #p6>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П7" #p7>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П8" #p8>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П9" #p9>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П10" #p10>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П11" #p11>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П12" #p12>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П13" #p13>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П14" #p14>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П15" #p15>
+    </div>
+    <div class="col-3">
+        <input type="number" class="form-control" placeholder="П16" #p16>
+    </div>
+    <div class="col">
+        <input type="button" class="btn btn-secondary" value="Додати об'єкт" (click)="add(name.value, p1.value, p2.value, p3.value, p4.value, p5.value, p6.value, p7.value, p8.value, p9.value, p10.value, p11.value, p12.value, p13.value, p14.value, p15.value, p16.value)">
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between mx-5">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">Об'єкти</th>
+                        <th scope="col">П1</th>
+                        <th scope="col">П2</th>
+                        <th scope="col">П3</th>
+                        <th scope="col">П4</th>
+                        <th scope="col">П5</th>
+                        <th scope="col">П6</th>
+                        <th scope="col">П7</th>
+                        <th scope="col">П8</th>
+                        <th scope="col">П9</th>
+                        <th scope="col">П10</th>
+                        <th scope="col">П11</th>
+                        <th scope="col">П12</th>
+                        <th scope="col">П13</th>
+                        <th scope="col">П14</th>
+                        <th scope="col">П15</th>
+                        <th scope="col">П16</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let task of list; let i=index;">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{task.name}}</td>
+                        <td>{{task.p1}}</td>
+                        <td>{{task.p2}}</td>
+                        <td>{{task.p3}}</td>
+                        <td>{{task.p4}}</td>
+                        <td>{{task.p5}}</td>
+                        <td>{{task.p6}}</td>
+                        <td>{{task.p7}}</td>
+                        <td>{{task.p8}}</td>
+                        <td>{{task.p9}}</td>
+                        <td>{{task.p10}}</td>
+                        <td>{{task.p11}}</td>
+                        <td>{{task.p12}}</td>
+                        <td>{{task.p13}}</td>
+                        <td>{{task.p14}}</td>
+                        <td>{{task.p15}}</td>
+                        <td>{{task.p16}}</td>
+                        <td>
+                            <button type="button" class="close" (click)="delete(i)">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
